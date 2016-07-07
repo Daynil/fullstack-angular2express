@@ -8,7 +8,7 @@ const tsProjectBack = tsc.createProject('tsconfig.json');
 const sass = require('gulp-sass');
 const nodemon = require('gulp-nodemon');
 
-/*========= Development Builds =========*/
+/********** Development Builds **********/
 
 gulp.task('serve', ['compile-ts', 'compile-scss', 'copy-untransformed', 'server-build'], () => {
   nodemon({script: './server/build/server.js'});
@@ -90,7 +90,7 @@ gulp.task('copy-untransformed', () => {
   return stream;
 });
 
-/*========= Production Builds =========*/
+/********** Production Builds **********/
 
 gulp.task('build-production', ['compile-ts-prod', 'compile-scss-prod', 'copy-untransformed', 'server-build']);
 
@@ -117,7 +117,7 @@ gulp.task('compile-ts-prod', () => {
   
   let tsResult = gulp
     .src(sourceTsFiles)
-    .pipe(tsc(tsProject));
+    .pipe(tsc(tsProjectFront));
   
   let stream = tsResult
     .pipe(gulp.dest('./dist'));
