@@ -1,9 +1,6 @@
-import { bootstrap }    from '@angular/platform-browser-dynamic';
-import { enableProdMode } from "@angular/core";
-
-import { AppComponent } from './app.component';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { AppModule } from './app.module';
 
 // enableProdMode();
 
-bootstrap(AppComponent)
-  .catch(error => console.log(error));
+platformBrowserDynamic().bootstrapModule(AppModule);

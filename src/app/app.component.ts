@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Http, HTTP_PROVIDERS } from '@angular/http';
+import { Http } from '@angular/http';
 
 import { CheshireCatComponent } from './cheshire-cat/cheshire-cat.component';
 
@@ -7,9 +7,7 @@ import { CheshireCatComponent } from './cheshire-cat/cheshire-cat.component';
   moduleId: module.id,
   selector: 'my-app',
   templateUrl: 'app.component.html',
-  styleUrls: ['app.component.css'],
-  directives: [CheshireCatComponent],
-  providers: HTTP_PROVIDERS
+  styleUrls: ['app.component.css']
 })
 export class AppComponent {
   serverData: string;
